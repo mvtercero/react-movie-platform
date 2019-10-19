@@ -6,6 +6,7 @@ export default class MovieList extends Component {
    super(props)
    this.state = {
     movies: [],
+    movieDetail: []
    }
  }
 
@@ -16,25 +17,29 @@ export default class MovieList extends Component {
     })
     .then((movies) => {
       this.setState({ movies: movies.Search })
-      const movieIDList = movies.Search.map(movie => movie.imdbID)
-      for (const movieID of movieIDList) {
-        fetch('http://www.omdbapi.com/?i=' + movieID + '&apikey=b55524ae')
-        .then(function(response) {
-            return response.json();
-        })
-        .then((movieDetail)=> {
-          console.log(movieDetail, "---respuesta de la api")
-        })
-        .catch(function(error) {
-          console.log('Request failed', error)
-        })
-      }
+      Promise.all(movies.Search.map(movie =>  {
+        return fetch('http://www.omdbapi.com/?i=' + movie.imdbID + '&apikey=b55524ae')
+        .then((response) => {
+          return response.json();
+          })
+        .then((data) => {
+          return data;
+          });
+      }))
+      .then((movieDetail) => {
+        console.log(movieDetail, '---movieDetail')
+        this.setState({ movieDetail: movieDetail });
+      })
+      .catch(console.error.bind(console));
     })
     .catch((error)=>{ console.log(error)});
  }
+
+
  
   render() {
-    const { movies } = this.state;
+    const { movies, movieDetail } = this.state;
+    console.log(movieDetail, '---movie detail en render')
     if(movies) {
       return (
         <div>

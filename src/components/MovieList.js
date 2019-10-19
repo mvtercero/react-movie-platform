@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import MovieCard from './MovieCard'
 
 export default class MovieList extends Component {
  constructor(props) {
@@ -20,11 +21,19 @@ export default class MovieList extends Component {
  }
  
   render() {
-    const { movies } = this.state;
+    const { movies } = this.state;  
     if(movies) {
       return (
         <div>
-          <ul>{movies.map((movie, index) => <li key={index}>{movie.Title}</li>)}</ul>
+          <ul>{movies.map((movie, index) => 
+            <MovieCard 
+              key={index}
+              keyId={index} 
+              poster={movie.Poster} 
+              title={movie.Title} 
+              year={movie.Year}>
+            </MovieCard>)}
+          </ul>
         </div>
       )
     } else {

@@ -28,7 +28,7 @@ class App extends Component {
           <img src={batmanLogo} className="App-logo" alt="logo" />
         </header>
         <Search searchMovie={this.handleSearchMovie} value={value}></Search>
-        <MovieList></MovieList>
+        <MovieList value={value}></MovieList>
       </div>
     );
   }

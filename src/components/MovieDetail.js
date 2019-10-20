@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
-const MovieDetail = ({director, actors, plot, keyId}) => {
+const MovieDetail = ({ director, actors, plot }) => {
   return (
-    <li id={keyId}>
-      <p>{director}</p>
-      <p>{actors}</p>
-      <p>{plot}</p>
-    </li>
-  )
-}
+    <ul>
+      <li>{director}</li>
+      <li>{actors}</li>
+      <li>{plot}</li>
+    </ul>
+  );
+};
 
 export default MovieDetail;

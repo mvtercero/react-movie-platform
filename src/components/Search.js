@@ -1,13 +1,18 @@
-import React from 'react'
-import '../css/Search.css';
+import React from "react";
+import "../css/Search.css";
 
-const Search = ({ searchMovie, value}) => {
+const Search = ({ onSearchMovie, value }) => {
   return (
     <div>
       <p>Busca tu peli de Batman</p>
-      <input type="text" onChange={searchMovie} value={value} className="search"></input>
+      <input
+        type="text"
+        onChange={onSearchMovie}
+        value={value}
+        className="search"
+      ></input>
     </div>
-  )
-}
+  );
+};
 
 export default Search;

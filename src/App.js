@@ -1,37 +1,30 @@
-import React, { Component } from 'react';
-import batmanLogo from './batman-logo.svg';
-import './css/App.css';
-import MovieList from './components/MovieList';
-import Search from './components/Search'
+import React, { Component } from "react";
+import Header from "./components/Header";
+import Search from "./components/Search";
+import MovieList from "./components/MovieList";
+import "./css/App.css";
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-  
-    this.state = {
-       value: "",
-    }
-  }
+  state = {
+    value: ""
+  };
 
-  handleSearchMovie = event => {
+  searchMovieHandler = event => {
     this.setState({
       value: event.target.value
-    })
-  }
+    });
+  };
 
   render() {
-    const { value } = this.state
+    const { value } = this.state;
     return (
       <div className="App">
-        <header>
-          <img src={batmanLogo} className="App-logo" alt="logo" />
-        </header>
-        <Search searchMovie={this.handleSearchMovie} value={value}></Search>
+        <Header />
+        <Search onSearchMovie={this.searchMovieHandler} value={value}></Search>
         <MovieList value={value}></MovieList>
       </div>
     );
   }
-
 }
 
 export default App;

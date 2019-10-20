@@ -39,21 +39,19 @@ export default class MovieList extends Component {
     const { movies, movieDetail } = this.state;
     if(movies) {
       return (
-        <div>
-          <ul>
-            { movies.map((movie, index) =>
-              <MovieCard 
-                key={index}
-                keyId={index} 
-                poster={movie.Poster} 
-                title={movie.Title} 
-                year={movie.Year}
-                movieDetail={movieDetail}
-              >
-              </MovieCard>
-            )}
-          </ul>
-        </div>
+        <ul>
+          { movies.map((movie, index) =>
+            <MovieCard 
+              key={index}
+              keyId={index} 
+              poster={movie.Poster} 
+              title={movie.Title} 
+              year={movie.Year}
+              movieDetail={movieDetail}
+            >
+            </MovieCard>
+          )}
+        </ul>
       )
     } else {
       return (

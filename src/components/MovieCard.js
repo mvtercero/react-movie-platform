@@ -19,13 +19,13 @@ export default class MovieCard extends Component {
     const {keyId, poster, title, year, movieDetail} = this.props
     const {displayDetail} = this.state
     return (
-      <div>
-        <li id={keyId}>
+      <li>
+        <div id={keyId}>
           <img src={poster} alt="imagen de la película"/>
           <h2>{title}</h2>
           <p>{year}</p>
           <button onClick={this.displayDetail}>Más info</button>
-        </li>
+        </div>
 
         <ul> 
         { movieDetail.map((detail, index) =>
@@ -41,7 +41,7 @@ export default class MovieCard extends Component {
           ) : ( undefined )
         )}
         </ul>
-      </div>
+      </li>
     )
   }
 }

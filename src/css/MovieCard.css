@@ -1,0 +1,24 @@
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: auto;
+    margin-bottom: 48px;
+}
+.movie-card__img {
+    height: 400px;
+}
+
+.movie-card__title {
+    height: 112px;
+    margin-bottom: 0;
+    max-width: 240px;
+    font-size: 1.3em;
+}
+
+.movie-card__year {
+    margin: 12px 0 24px;
+    padding: 0;
+    font-size: 1em;
+}

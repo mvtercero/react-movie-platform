@@ -1,15 +1,17 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
+import MovieList from './components/MovieList';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <MovieList></MovieList>
         <a
           className="App-link"
           href="https://reactjs.org"

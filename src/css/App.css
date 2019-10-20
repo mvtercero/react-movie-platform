@@ -1,0 +1,23 @@
+.App {
+  background-color: #282c34;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 24px;
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+ul, li {
+  list-style: none;
+  margin:0; 
+  padding: 0; 
+  border:0;
+}

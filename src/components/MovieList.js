@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import MovieCard from './MovieCard'
+import MovieDetail from './MovieDetail'
 
 export default class MovieList extends Component {
  constructor(props) {
@@ -27,7 +28,6 @@ export default class MovieList extends Component {
           });
       }))
       .then((movieDetail) => {
-        console.log(movieDetail, '---movieDetail')
         this.setState({ movieDetail: movieDetail });
       })
       .catch(console.error.bind(console));
@@ -35,11 +35,8 @@ export default class MovieList extends Component {
     .catch((error)=>{ console.log(error)});
  }
 
-
- 
   render() {
     const { movies, movieDetail } = this.state;
-    console.log(movieDetail, '---movie detail en render')
     if(movies) {
       return (
         <div>
@@ -58,11 +55,14 @@ export default class MovieList extends Component {
           </ul>
           <ul> 
           { movieDetail.map((detail, index) =>
-            <li key={index}>
-              <p>{detail.Director}</p>
-              <p>{detail.Actors}</p>
-              <p>{detail.Plot}</p>
-            </li>
+            <MovieDetail
+              key={index}
+              keyId={index}
+              director={detail.Director}
+              actors={detail.Actors}
+              plot={detail.Plot}
+            >
+            </MovieDetail>
           )}
           </ul>
         </div>

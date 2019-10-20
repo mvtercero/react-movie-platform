@@ -1,6 +1,9 @@
 .search {
   outline: none;
-  border: 2px solid yellow;
+  border-radius: 50px;
+  border: none;
+  padding: 8px 16px;
   margin-bottom: 60px;
+  font-size: 0.6em;
   width: 50%;
 }

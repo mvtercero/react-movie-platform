@@ -28,7 +28,10 @@ export default class MovieCard extends Component {
         <img src={poster} alt={title} className="movie-card__img" />
         <h2 className="movie-card__title">{title}</h2>
         <p className="movie-card__year">{year}</p>
-        <button onClick={this.onClickDisplayDetail}>Más info</button>
+
+        <button onClick={this.onClickDisplayDetail}>
+          {displayDetail ? "Menos" : "Más"} info
+        </button>
 
         {displayDetail &&
           (details ? (

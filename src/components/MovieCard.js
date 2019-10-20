@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import MovieDetail from './MovieDetail'
+import '../css/MovieCard.css';
 
 export default class MovieCard extends Component {
   constructor(props) {
@@ -20,10 +21,10 @@ export default class MovieCard extends Component {
     const {displayDetail} = this.state
     return (
       <li>
-        <div id={keyId}>
-          <img src={poster} alt="imagen de la película"/>
-          <h2>{title}</h2>
-          <p>{year}</p>
+        <div id={keyId} className="movie-card">
+          <img src={poster} alt="imagen de la película" className="movie-card__img"/>
+          <h2 className="movie-card__title">{title}</h2>
+          <p className="movie-card__year">{year}</p>
           <button onClick={this.displayDetail}>Más info</button>
         </div>
 

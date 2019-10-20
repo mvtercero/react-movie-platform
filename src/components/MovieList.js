@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import MovieCard from './MovieCard'
+import '../css/MovieList.css';
 
 
 export default class MovieList extends Component {
@@ -39,7 +40,7 @@ export default class MovieList extends Component {
     const { movies, movieDetail } = this.state;
     if(movies) {
       return (
-        <ul>
+        <ul className="movie-list">
           { movies.map((movie, index) =>
             <MovieCard 
               key={index}

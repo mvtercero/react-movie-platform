@@ -1,8 +1,12 @@
 import React from 'react'
+import '../css/Search.css';
 
 const Search = ({ searchMovie, value}) => {
-  return(
-    <input type="text" onChange={searchMovie} value={value}></input>
+  return (
+    <div>
+      <p>Busca tu peli de Batman</p>
+      <input type="text" onChange={searchMovie} value={value} className="search"></input>
+    </div>
   )
 }
 

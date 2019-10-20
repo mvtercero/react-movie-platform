@@ -39,13 +39,10 @@ export default class MovieList extends Component {
   render() {
     const { movies, movieDetail } = this.state;
     const { value } = this.props;
-    const moviesList = movies.map((movie => { return movie }))
-    console.log(moviesList)
 
     if (movies) {
       return (
         <ul className="movie-list">
-
         { movies
           .map((movie, index) =>
             <MovieCard 

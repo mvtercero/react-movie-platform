@@ -21,7 +21,6 @@ class App extends Component {
 
   render() {
     const { value } = this.state
-    console.log(value, '--value')
     return (
       <div className="App">
         <header>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import MovieCard from './MovieCard'
-import MovieDetail from './MovieDetail'
+
 
 export default class MovieList extends Component {
  constructor(props) {
@@ -48,22 +48,10 @@ export default class MovieList extends Component {
                 poster={movie.Poster} 
                 title={movie.Title} 
                 year={movie.Year}
-                movieID={movie.imdbID}
+                movieDetail={movieDetail}
               >
               </MovieCard>
             )}
-          </ul>
-          <ul> 
-          { movieDetail.map((detail, index) =>
-            <MovieDetail
-              key={index}
-              keyId={index}
-              director={detail.Director}
-              actors={detail.Actors}
-              plot={detail.Plot}
-            >
-            </MovieDetail>
-          )}
           </ul>
         </div>
       )

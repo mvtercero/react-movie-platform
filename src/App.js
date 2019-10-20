@@ -1,28 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import batmanLogo from './batman-logo.svg';
 import './css/App.css';
 import MovieList from './components/MovieList';
+import Search from './components/Search'
 
-function App() {
-  return (
-    <div className="App">
-      <header>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <MovieList></MovieList>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       value: "",
+    }
+  }
+
+  handleSearchMovie = event => {
+    this.setState({
+      value: event.target.value
+    })
+  }
+
+  render() {
+    const { value } = this.state
+    return (
+      <div className="App">
+        <header>
+          <img src={batmanLogo} className="App-logo" alt="logo" />
+        </header>
+        <Search searchMovie={this.handleSearchMovie} value={value}></Search>
+        <MovieList value={value}></MovieList>
+      </div>
+    );
+  }
+
 }
 
 export default App;

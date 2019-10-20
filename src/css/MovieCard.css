@@ -11,10 +11,10 @@
 }
 
 .movie-card__title {
-    height: 112px;
+    /* height: 112px; */
     margin-bottom: 0;
     max-width: 240px;
-    font-size: 1.3em;
+    font-size: 1.125em;
 }
 
 .movie-card__year {

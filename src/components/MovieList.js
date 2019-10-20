@@ -38,10 +38,13 @@ export default class MovieList extends Component {
 
   render() {
     const { movies, movieDetail } = this.state;
-    if(movies) {
+    const { value } = this.props;
+
+    if (movies) {
       return (
         <ul className="movie-list">
-          { movies.map((movie, index) =>
+        { movies
+          .map((movie, index) =>
             <MovieCard 
               key={index}
               keyId={index} 
@@ -51,7 +54,11 @@ export default class MovieList extends Component {
               movieDetail={movieDetail}
             >
             </MovieCard>
-          )}
+          )
+          .filter((movie => 
+            movie.props.title.toLowerCase().includes(value.toLowerCase())
+          ))
+        }      
         </ul>
       )
     } else {

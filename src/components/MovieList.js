@@ -56,7 +56,15 @@ export default class MovieList extends Component {
               </MovieCard>
             )}
           </ul>
-          <ul></ul>
+          <ul> 
+          { movieDetail.map((detail, index) =>
+            <li key={index}>
+              <p>{detail.Director}</p>
+              <p>{detail.Actors}</p>
+              <p>{detail.Plot}</p>
+            </li>
+          )}
+          </ul>
         </div>
       )
     } else {
